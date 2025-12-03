@@ -20,24 +20,19 @@ public class ProductController {
 
     private final ProductService productService;
 
-    @PostMapping
-    public ResponseEntity<Void> testCallProduct(@RequestBody ProductRequestDto product) {
-        productService.save(product);
-        return ResponseEntity.noContent().build();
-    }
-
     @GetMapping("{id}")
     public ResponseEntity<ProductResponseDto> findProductById(@PathVariable Long id) {
         return ResponseEntity.ok(productService.findById(id));
-    }
-    @PostMapping
-    public ResponseEntity<ProductResponseDto> saveProduct(@RequestBody ProductRequestDto dto) {
-        return ResponseEntity.ok(productService.save(dto));
     }
 
     @GetMapping
     public ResponseEntity<List<ProductResponseDto>> findAllProducts() {
         return ResponseEntity.ok(productService.findAll());
+    }
+
+    @PostMapping
+    public ResponseEntity<ProductResponseDto> saveProduct(@RequestBody ProductRequestDto dto) {
+        return ResponseEntity.ok(productService.save(dto));
     }
 
     @DeleteMapping("{id}")

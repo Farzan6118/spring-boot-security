@@ -2,12 +2,10 @@ package com.example.security.domain.entity;
 
 import com.example.security.domain.enums.RecordStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Id;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.*;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.io.Serializable;
