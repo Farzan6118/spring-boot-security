@@ -27,13 +27,16 @@ public class SecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/info").permitAll()
-                        .requestMatchers("/api/v1/user").permitAll()
-                        .requestMatchers("/api/v1/product").permitAll()
+                        .requestMatchers("/api/v1/employee/**").hasRole("employee")
+                        .requestMatchers("/api/v1/product/**").hasRole("product")
                         .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())
-                .logout(logout -> logout.logoutUrl("/logo"));
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/")
+                );
+
 
         return http.build();
     }
