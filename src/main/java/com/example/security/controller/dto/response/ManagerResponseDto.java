@@ -7,8 +7,10 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductResponseDto {
+public class ManagerResponseDto {
     private Long id;
-    private String name;
-    private String code;
+    private String firstName;
+    private String lastName;
+    private String NationalCode;
+    private String role;
 }

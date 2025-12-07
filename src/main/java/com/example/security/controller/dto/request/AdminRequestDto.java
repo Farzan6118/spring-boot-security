@@ -1,4 +1,4 @@
-package com.example.security.controller.dto.response;
+package com.example.security.controller.dto.request;
 
 import lombok.*;
 
@@ -7,8 +7,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmployeeResponseDto {
-    private Long id;
+public class AdminRequestDto {
     private String firstName;
     private String lastName;
     private String NationalCode;

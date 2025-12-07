@@ -1,6 +1,8 @@
 package com.example.security.domain.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +10,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "employee")
-public class Employee extends BaseEntity<Long> {
+public class EmployeeEntity extends BaseEntity<Long> {
 
     private String firstName;
     private String lastName;
